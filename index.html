@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HackerNoon AI Digest — 2026-11-22</title>
+<meta name="theme-color" content="#f5f0e8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap">
+<style data-reading-theme="v1">
+/* Книжная тема дайджестов v1. Описание и примеры: reading-theme.md. Вставляет apply-reading-theme.py. */
+:root{
+  --bg:#f5f0e8; --card:#fffdf9; --ink:#2b2826; --muted:#6b655f; --faint:#9a938b;
+  --line:#e8dfd2; --accent:#b0603d; --accent-soft:#f7e4d7; --sage:#4d6a50; --sage-soft:#e3ede2;
+  --lav-soft:#ebe7f5; --sky-soft:#e2ecf3; --code:#f1eae0;
+  --r:22px; --gap:12px;
+  --sans:"Golos Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.62 var(--sans);overflow-wrap:break-word}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+img{max-width:100%;height:auto}
+b,strong{font-weight:600}
+h1,h2,h3,h4{font-family:var(--sans);color:var(--ink);margin:0;letter-spacing:-.01em}
+h1{font-size:44px;line-height:1.1;font-weight:700;margin:6px 0 16px}
+h2{font-size:30px;line-height:1.15;font-weight:700}
+h3{font-size:24px;line-height:1.25;font-weight:700}
+h3 a{color:inherit}
+h4{font-size:18px;line-height:1.3;font-weight:600}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin:0 0 7px}
+li::marker{color:var(--accent)}
+code,.k{font-family:var(--mono);font-size:.86em;background:var(--code);color:#5b4636;padding:1px 5px;border-radius:5px;overflow-wrap:anywhere;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+pre{background:var(--code);border-radius:12px;padding:12px 14px;overflow:auto;font-size:14px}
+pre code{background:none;padding:0}
+.accent,.em{color:var(--accent)}
+.hidden{display:none!important}
+[hidden]{display:none!important}
+#progress,.dot,.lk,.shot .zoom:not(button),.rv-hide{display:none!important}
+.rv{opacity:1!important;transform:none!important}
+
+/* Layout */
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+main{display:block}
+section{margin:0 auto}
+footer{text-align:center;color:var(--faint);font-size:14px;padding:48px 20px 64px}
+
+/* Navigation: one line, scrolls sideways on phones */
+nav{position:sticky;top:0;z-index:40;background:rgba(245,240,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:780px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;-webkit-overflow-scrolling:touch}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;color:var(--muted);font-size:15px;padding:6px 12px;border-radius:999px}
+.nav-links a:hover{text-decoration:none;color:var(--ink)}
+.nav-links a.active{background:var(--accent-soft);color:var(--accent)}
+.nav-links small{color:var(--faint);margin-left:3px}
+
+/* Hero */
+.hero{padding-top:44px;padding-bottom:8px}
+header.hero:not(.wrap){max-width:none;padding-left:0;padding-right:0}
+.eyebrow{display:inline-block;color:var(--accent);font-size:14px;font-weight:600;letter-spacing:.02em;margin:0 0 4px}
+.sub,.hero>.lead,.hero .wrap>.lead{font-size:19px;line-height:1.55;color:var(--muted);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip{background:var(--card);border-radius:999px;padding:6px 14px;font-size:14.5px;color:var(--muted)}
+.chip b{color:var(--ink)}
+
+/* Blocks: white rounded panels on pastel background */
+.talk,.box,.review-box,.watch-item,.meta,.funnel,.trick,.item,.card,.radar-wrap,.filtered{background:var(--card);border-radius:var(--r);padding:28px 32px;margin:0 0 var(--gap)}
+.talk .lab,.box h2{font-size:15px;font-weight:600;color:var(--accent);margin:0 0 8px;letter-spacing:0}
+.talk p:last-child,.box>*:last-child{margin-bottom:0}
+
+/* Section heads */
+.shead{display:flex;align-items:center;gap:12px;margin:56px 0 18px}
+.shead .num{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 8px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:16px}
+.shead .count{color:var(--faint);font-size:16px;font-weight:600}
+section>.lead,.wrap>.lead,.topic-intro .lead{color:var(--muted);font-size:17px;margin:-6px 0 18px}
+.topic-intro{margin:0}
+.grid,.tricks,.items,.watch{display:block}
+
+/* Card anatomy */
+.trick-head,.item-head,.card-top{display:block;margin:0 0 6px}
+.tnum{display:block;color:var(--faint);font-size:14px;font-weight:600;letter-spacing:.04em;margin:0 0 4px}
+.card-top{color:var(--faint);font-size:14px}
+.card-top span{margin-right:8px}
+.who,.byline,.card .meta,.date,.srcline{color:var(--muted);font-size:14.5px}
+.who,.byline{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:8px 0 18px}
+.byline span{color:var(--faint)}
+.au{font-weight:600}
+.src-tag,.rt,.lbl{color:var(--faint)}
+.cat,.tag{display:inline-block;background:var(--lav-soft);color:#5a5470;border-radius:999px;padding:1px 10px;font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.card .meta{background:none;padding:0;border-radius:0;margin:8px 0 6px}
+.orig{color:var(--faint);font-size:14.5px;font-style:italic;margin-bottom:12px}
+.lead-in,.gist,.copy p,.about p{font-size:17.5px}
+.problem{font-weight:400}
+.lab,.try-lab,.point-label,.flow-label,.apply-panel h4,.why b,.risk b,.gap b{display:block;font-size:15px;font-weight:600;color:var(--accent);margin:0 0 6px;letter-spacing:0;text-transform:none}
+.why b,.risk b,.gap b{display:inline;margin:0}
+.about,.key{margin:0 0 16px}
+.try,.apply-panel{background:var(--accent-soft);border-radius:16px;padding:16px 20px;margin:18px 0}
+.try ul,.apply-panel ol{margin-bottom:0}
+.measure{color:var(--muted)}
+.key-point{display:block;background:var(--sage-soft);border-radius:16px;padding:16px 20px;margin:18px 0}
+.key-point .point-label{color:var(--sage)}
+.key-point strong{display:block;font-size:18px;line-height:1.4;margin:0 0 6px}
+.key-point p{margin:0;color:var(--ink)}
+.flow-block{margin:18px 0}
+.flow-label span{color:var(--faint);font-weight:400}
+.mini-flow{list-style:none;padding:0;counter-reset:none}
+.mini-flow li{display:flex;gap:12px;align-items:baseline}
+.flow-index{color:var(--accent);font-weight:700;font-size:14px;min-width:22px}
+.apply-caption{color:var(--muted)}
+.why,.risk,.gap{margin:14px 0}
+.risk,.gap{color:var(--muted)}
+.srcline{margin-top:10px}
+details{margin:16px 0 4px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:15.5px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";}
+details[open] summary::before{content:"− ";}
+details[open] summary{margin-bottom:10px}
+summary span{display:none}
+dl{margin:0}
+dt{font-weight:600;color:var(--accent);font-size:15px;margin-top:10px}
+dd{margin:2px 0 0}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:15.5px}
+.links a{font-weight:600}
+.links svg,.src svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;vertical-align:-1px;margin-right:4px}
+
+/* Figures */
+figure{margin:20px 0;max-width:100%}
+.shot{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in;margin-inline:auto}
+.shot img{display:block;width:auto;max-width:100%;height:auto;margin-inline:auto}
+.shot .badge{position:absolute;top:8px;left:8px;background:rgba(255,253,249,.92);color:var(--muted);font-size:12px;padding:2px 9px;border-radius:999px}
+button.zoom{all:unset;display:block;width:100%;cursor:zoom-in}
+button.zoom span{display:none}
+figcaption{color:var(--muted);font-size:14.5px;line-height:1.5;margin-top:8px}
+figcaption b{color:var(--ink)}
+.figbar{color:var(--muted);font-size:14px}
+
+/* Watch / radar / plan / meta */
+.watch-item h4{margin:0 0 4px}
+.watch-item .who{margin:4px 0 10px}
+.watch-item p:last-of-type{margin-bottom:8px}
+.watch-item .src{font-weight:600}
+.radar{margin:0;padding-left:20px}
+.radar li{margin-bottom:12px}
+.radar a{text-decoration:none!important}
+.checks{display:grid;gap:8px}
+.check{display:flex;gap:12px;align-items:flex-start;background:var(--card);border-radius:16px;padding:14px 18px;cursor:pointer;user-select:none}
+.check .box{width:22px;height:22px;flex:0 0 auto;border:2px solid var(--faint);border-radius:7px;display:flex;align-items:center;justify-content:center;margin-top:2px;background:none;padding:0}
+.check .box svg{width:13px;height:13px;stroke:#fff;stroke-width:3;fill:none;opacity:0}
+.check.done .box{background:var(--sage);border-color:var(--sage)}
+.check.done .box svg{opacity:1}
+.check.done .txt{color:var(--faint);text-decoration:line-through}
+.check .txt{flex:1}
+.check .when{color:var(--muted);font-size:13px;background:var(--sky-soft);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.review-box label{display:flex;gap:12px;align-items:flex-start;margin:0 0 10px;cursor:pointer}
+.review-box label:last-child{margin-bottom:0}
+.review-box input[type=checkbox]{width:20px;height:20px;margin-top:4px;accent-color:var(--sage);flex:0 0 auto}
+.meta{font-size:14.5px;color:var(--muted)}
+.meta>div{margin-bottom:4px}
+.meta b{color:var(--ink);font-weight:600;margin-right:6px}
+.funnel{color:var(--muted)}
+.filtered{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14.5px;color:var(--muted)}
+.plan{background:var(--card);border-radius:var(--r);padding:24px 28px 24px 48px}
+.top5{padding-left:22px;margin:0}
+.top5 li span{display:block;color:var(--muted);font-size:15px}
+.toc{list-style:none;padding:0;margin:0 0 14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc b{color:var(--faint);font-weight:600}
+
+/* Search and filters */
+.toolbar,.tools-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.search-label{display:block;width:100%}
+.search-label span{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+input[type=search],.search{width:100%;flex:1 1 220px;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:11px 16px;outline:none}
+input[type=search]:focus{border-color:var(--accent)}
+.flt,.reset{font:inherit;font-size:14.5px;border:0;border-radius:999px;padding:7px 14px;background:var(--bg);color:var(--muted);cursor:pointer}
+.box .flt{background:var(--bg)}
+.flt.on{background:var(--accent);color:#fff}
+.reset{background:none;color:var(--accent);font-weight:600}
+.result,.found,.empty{color:var(--muted);font-size:14.5px;margin:6px 0 0}
+
+/* Desktop sidebar (AI Engineering list) */
+.side{display:none}
+@media (min-width:1320px){
+  .side{display:block;position:fixed;left:24px;top:84px;width:250px;max-height:calc(100vh - 110px);overflow:auto;font-size:13.5px;line-height:1.4;scrollbar-width:thin}
+  .side ol{padding-left:22px;margin:0}
+  .side li{margin-bottom:8px}
+  .side a{color:var(--muted)}
+}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:200;background:rgba(43,40,38,.9);display:none;flex-direction:column;align-items:center;justify-content:center;padding:64px 16px 32px;overflow:auto;cursor:zoom-out}
+#lb.on,#lb.open{display:flex}
+#lb img{max-width:94vw;max-height:78vh;border-radius:12px;background:#fff}
+#lbbox,.lbinner{max-width:94vw;background:#fff;border-radius:12px;overflow:auto;max-height:calc(100vh - 140px)}
+#lbbox img,.lbinner img{display:block;width:100%;height:auto;max-width:100%;max-height:none;border-radius:0}
+#lb .lbcap{color:#f5f0e8;font-size:14.5px;line-height:1.5;margin-top:14px;max-width:760px;text-align:center}
+#lb .lbbtn,#lb .lbsrc{margin-top:12px;display:inline-flex;gap:8px;align-items:center;background:var(--card);color:var(--ink);padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px;min-height:44px}
+#lb .lbbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+#lb .close{position:fixed;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:26px;line-height:44px;text-align:center;cursor:pointer;padding:0}
+
+/* Phones */
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .hero{padding-top:28px}
+  h1{font-size:31px}
+  h2{font-size:25px}
+  h3{font-size:21px}
+  .sub,.hero>.lead,.hero .wrap>.lead{font-size:17px}
+  .talk,.box,.review-box,.watch-item,.meta,.funnel,.trick,.item,.card,.filtered{padding:20px 18px;border-radius:18px}
+  .try,.apply-panel,.key-point{padding:14px 16px;margin-left:-4px;margin-right:-4px}
+  .lead-in,.gist,.copy p,.about p{font-size:17px}
+  .shead{margin-top:40px}
+  .plan{padding:20px 18px 20px 38px}
+  .nav-in{padding:8px 12px;gap:10px}
+  .brand{font-size:14px}
+  .check{padding:12px 14px}
+  .check{flex-wrap:wrap}
+  .check .when{margin-left:34px}
+  figure{margin:16px -6px}
+  article .about,article .key{padding:0!important;background:none!important;border:0!important}
+}
+</style>
+
+<style data-visual-html-responsive="v1">
+:root {
+  --page-gutter: 22px;
+  --gutter: 22px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: visible !important;
+}
+
+.wrap,
+.nav-in,
+footer,
+[data-mobile-container] {
+  width: 100% !important;
+  margin-inline: auto;
+  padding-inline: var(--page-gutter) !important;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+.grid > *,
+.hero-grid > *,
+.split > *,
+.quotes > *,
+.checks > *,
+.facts > *,
+.tools > *,
+.debate > *,
+.nav-links,
+.navlinks,
+.shead > *,
+.sec-head > *,
+.tl-item,
+.timeline > *,
+[data-mobile-stack] > * {
+  min-width: 0;
+}
+
+img,
+video,
+audio,
+canvas,
+iframe,
+figure {
+  max-width: 100% !important;
+}
+
+img,
+video,
+canvas {
+  height: auto;
+}
+
+video,
+audio,
+iframe {
+  display: block;
+  width: 100% !important;
+}
+
+iframe {
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+
+pre,
+table,
+.tbl,
+[data-mobile-scroll] {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+table,
+.tbl {
+  display: block;
+}
+
+[data-mobile-scroll] > svg {
+  width: 640px !important;
+  min-width: 640px !important;
+  max-width: none !important;
+  height: auto;
+}
+
+.k,
+.srcline,
+.srcline code,
+.eyebrow,
+.chip,
+.pill,
+.tag,
+.au,
+.src,
+.tc,
+.t,
+.timecode,
+.trick-head h3,
+.item-head h3,
+.check .txt,
+.talk p,
+.trick p,
+.trick li,
+.item p,
+.item li,
+.card p,
+.card li,
+.quote .q,
+.quote .ru,
+blockquote .ru,
+.tl-item p,
+.timeline p,
+.deb li,
+.callout,
+.fact .d,
+.tool .desc,
+[data-mobile-copy],
+[data-mobile-copy] p,
+[data-mobile-copy] li,
+[data-mobile-copy] dd,
+[data-mobile-wrap],
+code:not(pre code),
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.eyebrow,
+.chip,
+.pill,
+.tag,
+.au,
+.src,
+.links .src {
+  max-width: 100%;
+}
+
+.src,
+.links .src {
+  white-space: normal !important;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-gutter: 18px;
+    --gutter: 18px;
+    --radius: 14px;
+  }
+
+  .nav-in,
+  nav .wrap {
+    min-height: 60px;
+    height: auto !important;
+    gap: 8px !important;
+    padding-block: 8px !important;
+  }
+
+  .brand,
+  .navbrand {
+    display: none !important;
+  }
+
+  .nav-links,
+  .navlinks {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-bottom: 2px;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .nav-links::-webkit-scrollbar,
+  .navlinks::-webkit-scrollbar {
+    display: block;
+    height: 2px;
+  }
+
+  nav a,
+  a.src,
+  a.tc,
+  a.t,
+  a.timecode,
+  a.btn,
+  button,
+  [role="button"],
+  .lbbtn,
+  #lb .close,
+  .lightbox .close,
+  [data-seek] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  nav a,
+  a.src,
+  a.tc,
+  a.t,
+  a.timecode,
+  a.btn,
+  button,
+  [role="button"],
+  .lbbtn,
+  #lb .close,
+  .lightbox .close,
+  a[data-seek],
+  button[data-seek],
+  span[data-seek] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links a,
+  .navlinks a {
+    flex: 0 0 auto;
+    padding: 9px 8px !important;
+  }
+
+  section {
+    padding-block: 52px 36px !important;
+    scroll-margin-top: 56px !important;
+  }
+
+  header.hero,
+  .hero {
+    padding-block: 24px 24px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 36px) !important;
+    line-height: 1.1;
+    margin-top: 18px;
+  }
+
+  .g2,
+  .g3,
+  .g4,
+  .grid:not(.g2):not(.g3):not(.g4),
+  .hero-grid,
+  .split,
+  .quotes,
+  .checks,
+  .facts,
+  .tools,
+  .debate,
+  [data-mobile-stack="grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  [data-mobile-stack="flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .canvas:not([data-mobile-diagram="reflow"]),
+  figure:not([data-mobile-diagram="reflow"]):has(> svg[viewBox]) {
+    max-width: 100%;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .canvas:not([data-mobile-diagram="reflow"]) > svg[viewBox]:not([data-mobile-diagram="reflow"]),
+  figure:not([data-mobile-diagram="reflow"]) > svg[viewBox]:not([data-mobile-diagram="reflow"]) {
+    width: 640px !important;
+    min-width: 640px !important;
+    max-width: none !important;
+    height: auto;
+  }
+
+  .talk,
+  .trick,
+  .item,
+  .card,
+  .quote,
+  .fact,
+  .check:not(ul),
+  .check > li,
+  .deb,
+  .thesis,
+  .thesis-card,
+  blockquote,
+  .callout,
+  [data-mobile-card] {
+    padding: 20px 18px !important;
+  }
+
+  blockquote {
+    margin-inline: 0 !important;
+  }
+
+  .trick-head,
+  .item-head,
+  .shead,
+  .sec-head,
+  .code .bar,
+  .tl-head,
+  blockquote footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .shead,
+  .sec-head {
+    align-items: flex-start;
+    margin-bottom: 20px !important;
+  }
+
+  .shead h2,
+  .sec-head h2 {
+    font-size: 24px !important;
+  }
+
+  .shead .src,
+  .sec-head .src {
+    margin-left: 0 !important;
+  }
+
+  .trick-head .tnum,
+  .item-head .tnum {
+    min-width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .trick-head h3,
+  .item-head h3 {
+    padding-top: 4px;
+    font-size: 20px;
+  }
+
+  .who {
+    padding-left: 0;
+  }
+
+  .about,
+  .key,
+  .try,
+  .risk {
+    padding: 15px 16px;
+  }
+
+  .hero .sub,
+  .hero .lede,
+  .hero .lead,
+  .lead,
+  .lede,
+  .sec-sub,
+  .talk p,
+  .trick p,
+  .trick li,
+  .item p,
+  .item li,
+  .card p,
+  .card li,
+  .quote .q,
+  .quote .ru,
+  blockquote .ru,
+  .tl-item p,
+  .timeline p,
+  .check .txt,
+  .check > li,
+  .deb li,
+  .callout,
+  .fact .d,
+  .tool .desc,
+  .watch-item p,
+  [data-mobile-copy],
+  [data-mobile-copy] p,
+  [data-mobile-copy] li,
+  [data-mobile-copy] dd {
+    font-size: 16px !important;
+  }
+
+  .fact {
+    align-items: flex-start;
+  }
+
+  .fact .v {
+    min-width: 0 !important;
+  }
+
+  .tl {
+    padding-left: 24px;
+  }
+
+  .tl-thumbs .shot {
+    width: 100% !important;
+  }
+
+  .links {
+    align-items: stretch;
+  }
+
+  .links .src {
+    min-height: 44px;
+    padding: 9px 11px;
+  }
+
+  .check:not(ul) {
+    flex-wrap: wrap;
+  }
+
+  .check .txt {
+    flex: 1 1 220px;
+  }
+
+  #lb,
+  .lightbox {
+    padding: 16px !important;
+  }
+
+  footer {
+    padding-block: 36px 60px !important;
+  }
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="nav-in">
+  <div class="brand"><span class="dot"></span>HackerNoon Weekly · AI</div>
+  <div class="nav-links">
+    <a href="#talk">О&nbsp;чём&nbsp;пишут</a><a href="#tricks">Статьи</a><a href="#watch">На&nbsp;заметку</a><a href="#plan">План</a>
+  </div>
+</div></nav>
+
+<header class="wrap hero">
+  <span class="eyebrow">● HACKERNOON WEEKLY DIGEST · AI / AGENTS / LLM</span>
+  <h1>AI-статьи недели с HackerNoon</h1>
+  <p class="sub">Разборы, рецепты и инструменты по LLM и агентам, которые можно применить: о чём статья, что в ней главное и что попробовать за вечер.</p>
+  <div class="chips">
+    <span class="chip">🗓 окно <b>2026-11-15 — 2026-11-22</b></span>
+    <span class="chip">⚡ статей: <b>10</b></span>
+    <span class="chip">👀 на заметку: <b>4</b></span>
+    <span class="chip">📡 отсканировано: <b>278</b></span>
+  </div>
+  <div class="talk rv" id="talk">
+    <div class="lab">📝 О чём пишут на этой неделе</div>
+    <p>Главная тема недели на HackerNoon — <span class="accent">чем агент может навредить, когда что-то пошло не так</span>. Несколько авторов исходят из того, что модель уже обманута, и проверяют, что останется у неё в руках: права в GitHub Actions, пустая переменная в <span class="k">rm -rf</span>, чужие ответы в сессии MCP-сервера, файлы, которые прочитал сабагент. Вторая линия — <span class="accent">честные замеры вместо впечатлений</span>: плагин памяти claude-mem добавляет около 5 200 токенов к каждому запросу, роутер в RAG съедает больше, чем даёт, а четыре бага в оценке нарисовали несуществующий прирост. Почти все замеры сделаны на одной машине или одном наборе данных, поэтому пробелы названы в каждой карточке.</p>
+  </div>
+  <p class="lead rv">Окно покрыто целиком: в индекс HackerNoon за неделю попало 278 статей. По тегам к AI- и агентной теме относится 101. Все 101 просмотрены по заголовку и описанию, 30 прочитаны полностью, для 12 сильнейших была отдельная попытка опровержения. Десять выдержали проверку и стали карточками. Две проверку не прошли: одна оказалась брендовым постом платного сервиса, у другой нет кода и примеров запросов. Обе ушли в «На что обратить внимание» вместе с двумя статьями без готового рецепта.</p>
+</header>
+
+<section id="tricks" class="wrap">
+  <div class="shead rv"><span class="num">⚡</span><h2>Главные статьи недели</h2></div>
+  <div class="tricks">
+    <article class="trick rv" id="trick-1" data-card-id="why-ai-agent-security-starts-with-permissions-not-prompts">
+      <div class="trick-head"><span class="tnum">01</span><h3>Считайте агента уже взломанным и проверяйте, что он может сделать</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/why-ai-agent-security-starts-with-permissions-not-prompts" target="_blank" rel="noopener">✍ JasonL</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈26 мин</span><span class="cat">ai-agents</span><span class="cat">prompt-injection</span><span class="cat">mcp</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Агент читает логи, тикеты и pull request, а значит, и текст атакующего. Автор предлагает не полагаться на то, что модель устоит перед инъекцией: доля успешных косвенных атак меняется от модели к модели и от промпта к промпту. Вместо этого нужно перечислить, что сделает обманутый запуск с каждым инструментом, и урезать права так, чтобы худший вызов ничего не дал.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>В исследовании INFUSE (19 моделей, 41 824 запуска) косвенная инъекция в среднем срабатывала в 19,6% случаев, от 3,2% до 41,9% в зависимости от модели. Строить защиту на этом числе автор не советует.</li><li>AI-ревью в GitHub Actions разделено на два job: модель читает diff без прав на запись (<span class="k">contents: read</span>, <span class="k">persist-credentials: false</span>), а комментарий публикует отдельный job с <span class="k">pull-requests: write</span>, где модели нет.</li><li>Инструменты со свободным текстом заменяются типизированными: вместо <span class="k">post_slack(channel, text)</span> вызов с полями сервиса и серьёзности. В Slack выключены <span class="k">unfurl_links</span> и <span class="k">unfurl_media</span>, чтобы ссылка не уносила данные.</li><li>Проверка — canary-тест: модель заменяется скриптом, который делает худшие вызовы взломанного агента, и тест следит, чтобы секрет не ушёл наружу ни как есть, ни в base64, ни в hex.</li><li>Дыра: дежурный агент в статье выдуман, тест дан как набросок, а YAML и код при извлечении потеряли выражения. Рабочая версия лежит в репозитории автора без ссылки в тексте; статья заканчивается рекламой курса SophiArch.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Выпишите инструменты одного своего агента и для каждого ответьте, что он сделает, если модель выполнит команду атакующего. Инструменты, которые пишут наружу свободным текстом, переведите на типизированные аргументы.</li><li>Если AI-ревью работает в GitHub Actions, разнесите его на два job по схеме из статьи: без прав для модели и без модели для записи комментария.</li><li class="measure">Метрика: canary-тест со скриптом вместо модели проходит, и секрет не появляется в исходящих запросах ни в одной из трёх кодировок.</li></ul></div>
+      <figure><div class="shot" data-full="assets/permissions-fooled-run.jpg" data-fw="1200" data-fh="630" data-href="https://hackernoon.com/why-ai-agent-security-starts-with-permissions-not-prompts" data-cap="обложка статьи со списком «что может обманутый запуск»: search_logs приносит текст атакующего, query_db удаляет таблицы, http_fetch отправляет данные на любой хост, rollback_deploy меняет прод без ревью."><img src="assets/permissions-fooled-run.jpg" alt="Список инструментов агента и того, что с ними сделает обманутый запуск" width="1200" height="630" style="width:min(100%,600px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> обложка статьи со списком «что может обманутый запуск»: search_logs приносит текст атакующего, query_db удаляет таблицы, http_fetch отправляет данные на любой хост, rollback_deploy меняет прод без ревью.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/why-ai-agent-security-starts-with-permissions-not-prompts" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a></div>
+    </article>
+    <article class="trick rv" id="trick-2" data-card-id="how-a-race-condition-in-the-php-mcp-sdk-broke-parall-9a2e856">
+      <div class="trick-head"><span class="tnum">02</span><h3>Параллельные вызовы MCP-сервера получали чужие ответы из-за гонки в сессии</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/how-a-race-condition-in-the-php-mcp-sdk-broke-parallel-tool-calls" target="_blank" rel="noopener">✍ MattLeads</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈22 мин</span><span class="cat">mcp</span><span class="cat">php</span><span class="cat">concurrency</span></div>
+      <div class="about"><div class="lab">О чём</div><p>MCP-сервер на Symfony в проде иногда отвечал на tools/call результатом другого запроса или пустым 202, а в логах всё было чисто. Автор нашёл причину в официальном PHP SDK: версия 0.8.1 складывала ответы в общую сессию, и параллельные воркеры перезаписывали друг друга. Урок шире PHP: любое состояние сессии, которое обработчик читает и переписывает целиком, ломается при параллельных вызовах агента.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Механизм — lost update: два воркера загружают одну сессию, каждый сохраняет её целиком, и ответ первого затирается. Первый получает ответ второго, второй — пустой 202.</li><li>Воспроизведение: 8 воркеров, <span class="k">FileSessionStore</span>, раунды по 10 параллельных вызовов. На 0.8.1 за 100 раундов 46 своих ответов из 1 000, 897 чужих и 43 пустых 202.</li><li>На 0.9.0 все 1 000 ответов верные. В проде хватило обновить symfony/mcp-bundle 0.14.1 → 0.15.0 и mcp/sdk 0.8.1 → 0.9.0.</li><li><span class="k">FileSessionLock</span> тоже даёт верные ответы, но выстраивает вызовы сессии в очередь: 8,9 с против 0,7 с на 100 раундов. Серверу только с инструментами сессия не нужна вовсе.</li><li>Дыра: Python-клиента для гонки в статье нет, начало серверного скрипта обрезано, цифры сняты одним прогоном. Пример сервера без сессии — собственный бандл автора.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Отправьте на свой MCP-сервер с несколькими воркерами 10 параллельных <span class="k">tools/call</span> в одной сессии и сверьте <span class="k">id</span> каждого ответа с запросом.</li><li>Если сервер на mcp/sdk 0.8.x, обновитесь до 0.9.0+. В своём сервере на другом SDK найдите обработчики, которые читают и целиком переписывают состояние сессии.</li><li class="measure">Метрика: доля ответов с чужим id или пустым телом на 100 параллельных раундах — до и после исправления должна стать 0.</li></ul></div>
+      <figure><div class="shot" data-full="assets/php-mcp-lost-update.jpg" data-fw="1280" data-fh="856" data-href="https://hackernoon.com/how-a-race-condition-in-the-php-mcp-sdk-broke-parallel-tool-calls" data-cap="обложка-схема статьи: Worker A и Worker B загружают один файл сессии, ответ RA затирается ответом RB, A получает ответ B, а B — пустой 202."><img src="assets/php-mcp-lost-update.jpg" alt="Диаграмма lost update: два воркера и файл сессии" width="1280" height="856" style="width:min(100%,640px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> обложка-схема статьи: Worker A и Worker B загружают один файл сессии, ответ RA затирается ответом RB, A получает ответ B, а B — пустой 202.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/how-a-race-condition-in-the-php-mcp-sdk-broke-parallel-tool-calls" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a><a class="src" href="https://github.com/mattleads/agent-publishing-bundle" target="_blank" rel="noopener">Бандл автора</a></div>
+    </article>
+    <article class="trick rv" id="trick-3" data-card-id="how-claude-code-agents-accidentally-delete-filesand--ca97253">
+      <div class="trick-head"><span class="tnum">03</span><h3>Как пустая переменная превращает rm -rf агента в удаление диска</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/how-claude-code-agents-accidentally-delete-filesand-how-to-stop-them" target="_blank" rel="noopener">✍ Myeongseok Kang</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈5 мин</span><span class="cat">claude-code</span><span class="cat">bash</span><span class="cat">safety</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Агент собирает команду удаления из переменной, переменная оказывается пустой, и <span class="k">rm -rf "$D"/*</span> выполняется как <span class="k">rm -rf /*</span>. Автор разбирает три осенних инцидента с Claude Code и показывает приём, который останавливает shell до удаления. Подходит для любого агента, которому разрешён bash.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>В инциденте #95426 удаление через <span class="k">cygpath</span> стёрло около 600 GB, а <span class="k">2&gt;/dev/null</span> скрыл ошибки.</li><li>Кавычки, <span class="k">set -u</span> и <span class="k">--preserve-root</span> не спасают: последний защищает <span class="k">/</span>, но не <span class="k">/*</span>, <span class="k">/c/</span> или <span class="k">/mnt/d/</span>.</li><li>Приём: <span class="k">rm -rf "${D:?}/"</span> и <span class="k">rsync -a --delete src/ "${R:?}/"</span>. При пустом значении shell останавливается на каждом уровне раскрытия.</li><li>Для <span class="k">.git</span> автор советует <span class="k">mv .git .git.bak</span> вместо удаления.</li><li>Дыра: вторая половина статьи продвигает хуки claude-bulkhead автора, но ссылки на репозиторий и инструкции подключения нет. Хук видит только текст команды и пропустит удаление внутри скрипта.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Найдите в логах агента команды <span class="k">rm -rf</span> и <span class="k">rsync --delete</span> с переменными и проверьте их без установки: <span class="k">npx -y claude-bulkhead explain -- '&lt;команда&gt;'</span>.</li><li>Добавьте в AGENTS.md или CLAUDE.md правило: переменные в путях удаления только в форме <span class="k">"${VAR:?}"</span>, а цель печатается и проверяется перед удалением.</li><li class="measure">Метрика: <span class="k">D=""; rm -rf "${D:?}/"</span> в песочнице завершается ошибкой до удаления, а в новых логах агента нет удалений по неохраняемым переменным.</li></ul></div>
+      <figure><div class="shot" data-full="assets/rm-empty-var.jpg" data-fw="1400" data-fh="600" data-href="https://hackernoon.com/how-claude-code-agents-accidentally-delete-filesand-how-to-stop-them" data-cap="иллюстрация из статьи: при D=&quot;&quot; команда rm -rf &quot;$D&quot;/* превращается в rm -rf /*, rsync — в удаление от корня; хук предлагает &quot;${D:?}&quot;."><img src="assets/rm-empty-var.jpg" alt="Терминал: rm -rf с пустой переменной и блокировка" width="1400" height="600" style="width:min(100%,700px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> иллюстрация из статьи: при <code>D=""</code> команда <code>rm -rf "$D"/*</code> превращается в <code>rm -rf /*</code>, rsync — в удаление от корня; хук предлагает <code>"${D:?}"</code>.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/how-claude-code-agents-accidentally-delete-filesand-how-to-stop-them" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a></div>
+    </article>
+    <article class="trick rv" id="trick-4" data-card-id="claude-mem-tested-perfect-recall-but-at-a-cost-of-52-07a38f3">
+      <div class="trick-head"><span class="tnum">04</span><h3>claude-mem вспомнил решение прошлой сессии 3 раза из 3, но берёт ~5 200 токенов на запрос</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/claude-mem-tested-perfect-recall-but-at-a-cost-of-5200-tokens-per-request" target="_blank" rel="noopener">✍ Ishank Choudhary</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈16 мин</span><span class="cat">ai-memory</span><span class="cat">opencode</span><span class="cat">context</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Плагин claude-mem сохраняет наблюдения агента между сессиями, чтобы не объяснять правила заново. Автор поставил небольшой A/B-тест: новая сессия должна сделать задачу, которая зависит от решения из прошлой. Тест шёл в OpenCode 1.19 с бесплатной моделью deepseek-v4.1-flash-free, хотя README плагина называет и Claude Code. Статья полезна тем, кто выбирает между автоматической памятью и ручной заметкой в CLAUDE.md.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>С памятью задача выполнена верно 3 раза из 3, без неё 0 из 3, с правилом, повторённым вручную, тоже 3 из 3.</li><li>Цена: первый запрос в пустом проекте вырос с 7 470 до 12 701 токена с плагином и MCP. Весь прогон с памятью — 126 307 токенов контекста против 65 739 при ручном повторе правила.</li><li>Агент сначала вызывал <span class="k">claude_mem_search</span>, затем <span class="k">get_observations</span> по лучшему результату.</li><li>Телеметрия включена по умолчанию (<span class="k">npx claude-mem telemetry disable</span>), редактирование секретов <span class="k">CLAUDE_MEM_REDACT_ENABLED</span> выключено.</li><li>Дыра: по 3 прогона на условие, репозиторий из 7 файлов не опубликован. Запись наблюдений вероятностная: на бесплатном Gemini 7 вызовов инструментов так и не стали наблюдениями.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Поставьте claude-mem, сразу выключите телеметрию и включите <span class="k">CLAUDE_MEM_REDACT_ENABLED</span>.</li><li>Повторите тест автора на своём проекте: в первой сессии примите решение, во второй дайте задачу, которая от него зависит. Важное решение сохраните явно через <span class="k">save_memory</span> и проверьте во вьюере на <span class="k">127.0.0.1:37700/viewer</span>.</li><li class="measure">Метрика: вспомнила ли новая сессия решение и сколько токенов добавилось к первому запросу по сравнению с одной строкой в CLAUDE.md.</li></ul></div>
+      <figure><div class="shot" data-full="assets/claude-mem-result.jpg" data-fw="1600" data-fh="900" data-href="https://hackernoon.com/claude-mem-tested-perfect-recall-but-at-a-cost-of-5200-tokens-per-request" data-cap="обложка статьи с итогом теста: с памятью правило вспомнили 3 новые сессии из 3, без памяти — 0 из 3."><img src="assets/claude-mem-result.jpg" alt="Итог теста claude-mem: 3 of 3 против 0 of 3" width="1600" height="900" style="width:min(100%,720px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> обложка статьи с итогом теста: с памятью правило вспомнили 3 новые сессии из 3, без памяти — 0 из 3.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/claude-mem-tested-perfect-recall-but-at-a-cost-of-5200-tokens-per-request" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a><a class="src" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">Репозиторий claude-mem</a></div>
+    </article>
+    <article class="trick rv" id="trick-5" data-card-id="i-moved-my-claude-code-workflow-scripts-into-skills--a2290a1">
+      <div class="trick-head"><span class="tnum">05</span><h3>Runbook как Agent Skill: многошаговый workflow, который запускает любой агент</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/i-moved-my-claude-code-workflow-scripts-into-skills-any-agent-harness-can-run" target="_blank" rel="noopener">✍ Maksim Zemskov</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈13 мин</span><span class="cat">agent-skills</span><span class="cat">claude-code</span><span class="cat">orchestration</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Workflow в Claude Code не умеет остановиться и спросить человека, работает только в одном инструменте и с трудом отдаёт шаг модели другого вендора. Автор переложил такие сценарии в runbook: это Agent Skill с файлом <span class="k">flow.py</span>, который подсказывает сессии следующий шаг. Подойдёт тем, кто гоняет цепочки «реализовать → ревью → исправить» в разных агентах.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Runbook состоит из <span class="k">SKILL.md</span>, <span class="k">flow.py</span>, встроенного движка и папки <span class="k">prompts/</span>. Нужен Python 3.9+, внешних зависимостей нет.</li><li>Сессия запускает <span class="k">flow.py</span>, а он печатает, какой исполнитель нужен дальше и какое сообщение отдать сабагенту. Состояние прогона лежит в <span class="k">state.json</span>, поэтому новая сессия продолжает с того же места.</li><li>Шаги объявляются в Python: исполнитель, промпт, входные и выходные файлы, схема ответа. Циклы и ветвления — обычные <span class="k">while</span> и <span class="k">if</span>.</li><li>По логам автора: больше 300 прогонов, отклонение сессии от runbook меньше чем в 8% случаев, около 3 400 токенов на шаг в основном контексте.</li><li>Дыра: это инструмент автора, ссылки на репозиторий в тексте нет, содержимое <span class="k">prompts/</span> не показано. Для смешения вендоров нужен отдельный MCP-сервер, лимита расходов нет.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Установите готовый runbook: <span class="k">npx skills add agent-runbooks/gallery --skill runbook-review-loop -g</span> и прогоните его на небольшом изменении с проверкой юнит-тестами.</li><li>Возьмите свою цепочку из 3–4 шагов агента и опишите её через <span class="k">npx skills add agent-runbooks/skills</span> (навык для авторов runbook).</li><li class="measure">Метрика: прогон дошёл до статуса ready, каждый шаг оставил файл в каталоге прогона, а прерванная сессия продолжила работу из <span class="k">state.json</span>.</li></ul></div>
+      <figure><div class="shot" data-full="assets/runbook-run-report.jpg" data-fw="1400" data-fh="737" data-href="https://hackernoon.com/i-moved-my-claude-code-workflow-scripts-into-skills-any-agent-harness-can-run" data-cap="отчёт прогона из статьи: implement → review → fix → review#2 → ask-rounds → fix#2 → review#3; у каждого шага исполнитель, время, число замечаний и свой .md-файл."><img src="assets/runbook-run-report.jpg" alt="Отчёт прогона runbook: шаги, исполнители, время и файлы" width="1400" height="737" style="width:min(100%,700px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> отчёт прогона из статьи: implement → review → fix → review#2 → ask-rounds → fix#2 → review#3; у каждого шага исполнитель, время, число замечаний и свой .md-файл.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/i-moved-my-claude-code-workflow-scripts-into-skills-any-agent-harness-can-run" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a></div>
+    </article>
+    <article class="trick rv" id="trick-6" data-card-id="inside-agentwhy-part-1-a-step-by-step-audit-trail-fo-ca5d1fb">
+      <div class="trick-head"><span class="tnum">06</span><h3>Аудит сессии Claude Code: что прочитали агент и его сабагенты</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/inside-agentwhy-part-1-a-step-by-step-audit-trail-for-ai-coding-agents" target="_blank" rel="noopener">✍ Karol</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈13 мин</span><span class="cat">claude-code</span><span class="cat">audit</span><span class="cat">subagents</span></div>
+      <div class="about"><div class="lab">О чём</div><p>После сессии с сабагентами трудно понять, кто какой файл открыл и где сработал запрет. Автор разбирает, как восстановить эту картину из JSONL-логов Claude Code, и показывает свой инструмент agentwhy. Механизм связи логов пригодится и без инструмента, если вы пишете собственный аудит.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Лог сабагента лежит в <span class="k">subagents/agent-&lt;id&gt;.jsonl</span>, рядом <span class="k">agent-&lt;id&gt;.meta.json</span> с полем <span class="k">toolUseId</span> — id вызова Agent, который его запустил.</li><li>Связывать логи нужно только по <span class="k">toolUseId</span>: в первой измеренной сессии 6 из 15 вызовов Agent вернулись сразу, а отчёт помощника пришёл позже, поэтому время не годится.</li><li>Чтение, остановленное deny-правилом, по наблюдению автора не вызывает hook, но остаётся в сохранённом JSONL.</li><li>Чтения приватных файлов ловятся по солёным SHA-256 хэшам строк. Автор перепроверил 286 разговоров, отчёт изменился в 7.</li><li>Дыра: это реклама своего инструмента, ссылки на репозиторий нет, код в статье с пропусками. Что открывали MCP-инструменты, не видно.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Запустите <span class="k">npx @agentwhy/cli</span> в папке проекта и откройте вид «Step by step» для недавней сессии с сабагентами.</li><li>Без инструмента: в <span class="k">~/.claude/projects</span> сопоставьте id вызовов Agent с <span class="k">toolUseId</span> из <span class="k">subagents/*.meta.json</span> и найдите в JSONL чтения, остановленные deny-правилом.</li><li class="measure">Метрика: для каждого сабагента найден запустивший его вызов, а число остановленных чтений в JSONL совпадает с тем, что видят ваши hooks.</li></ul></div>
+      <figure><div class="shot" data-full="assets/agentwhy-step-by-step.jpg" data-fw="2000" data-fh="840" data-href="https://hackernoon.com/inside-agentwhy-part-1-a-step-by-step-audit-trail-for-ai-coding-agents" data-cap="обложка статьи со скриншотом вида Step by step: прочитанные файлы, вызов MCP-инструмента sentry, попытка открыть customers.csv, остановленная правилом, и передача работы Helper 1."><img src="assets/agentwhy-step-by-step.jpg" alt="Пошаговый журнал сессии в agentwhy" width="2000" height="840" style="width:min(100%,760px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> обложка статьи со скриншотом вида Step by step: прочитанные файлы, вызов MCP-инструмента sentry, попытка открыть customers.csv, остановленная правилом, и передача работы Helper 1.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/inside-agentwhy-part-1-a-step-by-step-audit-trail-for-ai-coding-agents" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a></div>
+    </article>
+    <article class="trick rv" id="trick-7" data-card-id="want-to-use-a-decision-model-router-in-a-rag-pipeline-dont">
+      <div class="trick-head"><span class="tnum">07</span><h3>Роутер по доменам в RAG ухудшил поиск, одна общая LoRA почти догнала идеал</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/want-to-use-a-decision-model-router-in-a-rag-pipeline-dont" target="_blank" rel="noopener">✍ Nicholas Lisac</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈7 мин</span><span class="cat">rag</span><span class="cat">embeddings</span><span class="cat">lora</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Если база знаний состоит из нескольких доменов, хочется поставить перед поиском роутер, который выберет нужный индекс. Автор измерил, сколько это даёт на четырёх доменах BEIR, и сравнил с дообучением эмбеддера. Для тех, кто проектирует RAG, это готовый контрольный опыт до покупки сложной архитектуры.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Эмбеддер EmbeddingGemma 2 на одной RTX 3090, метрика nDCG@10 на одних и тех же отложенных запросах.</li><li>Базовый поиск — 0.4503. Идеальный роутер, который всегда знает домен, — 0.4526. Реальный zero-shot роутер — 0.4084, то есть хуже базы.</li><li>Одна LoRA, обученная на всех доменах (rank 32, 200 шагов), — 0.4947. Идеальный роутер с четырьмя адаптерами — 0.4991, всего на 0.004 выше.</li><li>Ошибки роутера стоят дороже его потолка: на юридическом домене качество упало с 0.458 до 0.259.</li><li>Дыра: один seed, домены тематически далеки друг от друга, проверен один роутер. Кода и команд в статье нет, воспроизведение только через репозиторий.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Проверьте потолок роутера на своём RAG: ограничьте поиск правильным доменом по разметке и сравните nDCG@10 с поиском по всему индексу.</li><li>Склонируйте <span class="k">nicklisac/lora-router-rag</span> и воспроизведите одну строку из <span class="k">results/run_log.jsonl</span>.</li><li class="measure">Метрика: разница nDCG@10 между поиском с идеальным доменом и без него. Если она в пределах 0.01, роутер не окупит своих ошибок.</li></ul></div>
+      
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/want-to-use-a-decision-model-router-in-a-rag-pipeline-dont" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a><a class="src" href="https://github.com/nicklisac/lora-router-rag" target="_blank" rel="noopener">Репозиторий</a></div>
+    </article>
+    <article class="trick rv" id="trick-8" data-card-id="how-four-evaluation-bugs-distorted-a-cross-encoder-m-a630d73">
+      <div class="trick-head"><span class="tnum">08</span><h3>Четыре бага в оценке нарисовали прирост, которого не было</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/how-four-evaluation-bugs-distorted-a-cross-encoder-model-comparison" target="_blank" rel="noopener">✍ Vladimir Beskorovainyi</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈10 мин</span><span class="cat">llm-evaluation</span><span class="cat">data-leakage</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Автор сравнивал две версии своего cross-encoder и увидел прирост и два регресса. Все три оказались артефактами его же кода оценки. Разбор полезен всем, кто сравнивает модели или промпты на собственном eval: каждый баг легко повторить у себя.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Общий генератор случайных чисел без seed сдвигал разбиение данных. Исправление — отдельный генератор на задачу: <span class="k">random.Random(f"split:{task}")</span>.</li><li>Утечка: 90,3% и 89,4% строк новой валидации уже были в обучении прошлой версии. На чистых данных результат упал с 0.909 до 0.650.</li><li>Итоговая строка считалась по 5 078 из 10 157 строк, а вывод о калибровке менял знак на 25 разбиениях.</li><li>Проверка SHA-256 прошла на устаревшей копии данных. Выдал её подсчёт уникальных вариантов ответа: 120 против 198.</li><li>Дыра: ссылки на код в тексте нет, код показан только для первого исправления, числа относятся к одной модели автора.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Найдите в своём коде разбиения eval вызовы <span class="k">random.shuffle</span> без собственного генератора и задайте seed от имени задачи.</li><li>Посчитайте, какая доля текущей валидации встречается в обучающих данных прошлой версии модели или в примерах few-shot промпта.</li><li class="measure">Метрика: доля пересечения валидации с обучением и разброс главной метрики на 25 случайных разбиениях вместо одного числа.</li></ul></div>
+      <figure><div class="shot" data-full="assets/eval-leakage.png" data-fw="1980" data-fh="900" data-href="https://hackernoon.com/how-four-evaluation-bugs-distorted-a-cross-encoder-model-comparison" data-cap="график из статьи: доля строк валидации v1.3, найденных в обучении v1.1 — 90,3% в acceptability, 89,4% в reasoning, 47,2% в review rating, 21,6% в toxicity."><img src="assets/eval-leakage.png" alt="График доли утёкших строк валидации по задачам" width="1980" height="900" style="width:min(100%,760px)" loading="lazy"><span class="badge">из статьи</span><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span></div><figcaption><b>На картинке:</b> график из статьи: доля строк валидации v1.3, найденных в обучении v1.1 — 90,3% в acceptability, 89,4% в reasoning, 47,2% в review rating, 21,6% в toxicity.</figcaption></figure>
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/how-four-evaluation-bugs-distorted-a-cross-encoder-model-comparison" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a></div>
+    </article>
+    <article class="trick rv" id="trick-9" data-card-id="self-healing-tests-can-preserve-the-wrong-behavior">
+      <div class="trick-head"><span class="tnum">09</span><h3>Как не дать AI «починить» e2e-тест так, что он перестанет проверять нужное</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/self-healing-tests-can-preserve-the-wrong-behavior" target="_blank" rel="noopener">✍ Raju Dandigam</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈9 мин</span><span class="cat">cypress</span><span class="cat">test-automation</span><span class="cat">ai</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Агент чинит упавший тест: находит другую кнопку, тест зеленеет, но проверяет уже не тот сценарий. Автор предлагает правила для таких исправлений в Cypress: что агенту можно менять, какими постусловиями закрепить смысл теста и как убедиться, что тест всё ещё ловит дефект. Сам подход от Cypress не зависит.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Исправления делятся на три класса: замена селектора, перегенерация шага и переосмысление цели теста. Последний класс опасен.</li><li>Политика исправлений перечисляет разрешённое (<span class="k">selector-replacement</span>, ожидание события) и запрещённое (<span class="k">assertion-removal</span>, фиксированная пауза, <span class="k">force-click</span>, пропуск теста).</li><li>Смысл теста закрепляют постусловия: <span class="k">POST /api/orders</span> вернул 201, открылся маршрут подтверждения, статус заказа confirmed.</li><li>Негативный контроль подменяет ответ на 409 <span class="k">ORDER_NOT_CREATED</span>, и тест обязан упасть.</li><li>Дыра: политика — соглашение, Cypress её не проверяет. Замеров и репозитория нет, как запускать падающий контроль в CI, читателю решать самому. Автор — Cypress Ambassador.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Запишите в инструкцию для агента список запрещённых правок тестов: удаление проверок, <span class="k">cy.wait</span> с числом, <span class="k">force: true</span>, skip.</li><li>Добавьте к одному критичному e2e-тесту постусловия по API и маршруту и отдельный негативный контроль, который подменяет ответ API ошибкой.</li><li class="measure">Метрика: негативный контроль падает, а после AI-исправления селектора основной тест проходит с теми же постусловиями.</li></ul></div>
+      
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/self-healing-tests-can-preserve-the-wrong-behavior" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a></div>
+    </article>
+    <article class="trick rv" id="trick-10" data-card-id="building-a-private-ai-document-assistant-on-an-8gb-g-1229d23">
+      <div class="trick-head"><span class="tnum">10</span><h3>Локальный RAG по документам на GPU с 8 GB: llama.cpp, FAISS и проверка бюджета токенов</h3></div>
+      <div class="who"><a class="au" href="https://hackernoon.com/building-a-private-ai-document-assistant-on-an-8gb-gpu-using-rag-and-llamacpp" target="_blank" rel="noopener">✍ Naresh Waghela</a><span class="src-tag">HackerNoon</span><span class="rt">⏱ ≈19 мин</span><span class="cat">llama.cpp</span><span class="cat">rag</span><span class="cat">local-llm</span></div>
+      <div class="about"><div class="lab">О чём</div><p>Нужен ассистент по внутренним документам без облачного API. Автор собирает его из Qwen2.5-7B в llama-server на видеокарте и поиска на CPU, чтобы вся видеопамять досталась модели. Ценность статьи — в деталях: флаги сервера, нарезка текста и проверка, что собранный промпт влезает в контекст.</p></div>
+      <div class="key"><div class="lab">🔑 Главное</div><ul><li>Модель Qwen2.5-7B-Instruct в квантовании <span class="k">Q4_K_M</span>, <span class="k">llama-server --ctx-size 4096 --parallel 1</span>.</li><li>Эмбеддинги <span class="k">all-MiniLM-L6-v2</span> и индекс FAISS <span class="k">IndexFlatIP</span> на нормированных векторах работают на CPU.</li><li>Чанки по 160 слов с перекрытием 32. Перед генерацией код собирает промпт через <span class="k">/apply-template</span> и считает токены через <span class="k">/tokenize</span> того же сервера.</li><li>Системный промпт считает фрагменты недоверенными, требует ссылок вида [S1] и прямого ответа, если сведений нет.</li><li>Дыра: замеров нет, автор прямо пишет, что бенчмарк на 8 GB не запускал. Листинг обрезан внутри <span class="k">ask()</span>, а пакет с <span class="k">benchmark.py</span> не дан ссылкой.</li></ul></div>
+      <div class="try"><div class="try-lab">⚡ Попробовать за вечер</div><ul><li>Поднимите <span class="k">llama-server</span> с флагами из статьи и перед каждым запросом проверяйте длину промпта через <span class="k">/apply-template</span> и <span class="k">/tokenize</span>.</li><li>Соберите индекс MiniLM и FAISS по папке своих документов и сравните ответы при top-k 2 и 4 на одних и тех же вопросах.</li><li class="measure">Метрика: доля ответов с верной ссылкой на источник и честный ответ «не нашёл» на вопрос, ответа на который в документах нет.</li></ul></div>
+      
+      <div class="links"><span class="lk">🔗</span><a class="src" href="https://hackernoon.com/building-a-private-ai-document-assistant-on-an-8gb-gpu-using-rag-and-llamacpp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v6H5V5h6"/></svg>Read on HackerNoon</a><a class="src" href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">llama.cpp</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="watch" class="wrap">
+  <div class="shead rv"><span class="num">💬</span><h2>На что обратить внимание</h2></div>
+  <p class="lead rv">Статьи, которые стоит держать в голове, хотя рецепт на один вечер из них не складывается: сервис платный, нет кода или примеров запросов, либо готовой реализации нет.</p>
+  <div class="watch">
+    <div class="watch-item rv">
+      <h4><span class="em">📄</span> Извлечение данных из PDF с источником каждого значения</h4>
+      <div class="who"><a class="au" href="https://hackernoon.com/data-extraction-for-ai-agents-10-mcp-prompts-for-pdfs-scans-and-forms" target="_blank" rel="noopener">✍ Nutrient</a><span class="src-tag">HackerNoon</span></div>
+      <p>Брендовый пост Nutrient: агент через их MCP-сервер достаёт поля из счетов и сканов, у каждого значения есть страница и координаты. Сервис платный ($0.009–0.018 за страницу при разборе), тестовые файлы не опубликованы. Переносимая идея — требовать от извлечения ссылку на место в документе.</p>
+      <a class="src" href="https://hackernoon.com/data-extraction-for-ai-agents-10-mcp-prompts-for-pdfs-scans-and-forms" target="_blank" rel="noopener">Читать ↗</a>
+    </div>
+    <div class="watch-item rv">
+      <h4><span class="em">⏱</span> Codex CLI продолжает работу сам после сброса лимита</h4>
+      <div class="who"><a class="au" href="https://hackernoon.com/how-i-made-codex-cli-resume-itself-after-hitting-a-usage-limit" target="_blank" rel="noopener">✍ Ercan Atay</a><span class="src-tag">HackerNoon</span></div>
+      <p>Приложение автора читает признак <span class="k">usage_limit_exceeded</span> в <span class="k">~/.codex/sessions/</span> и продолжает ту же сессию через <span class="k">turn/start</span>, не больше трёх раз подряд. Только macOS и Terminal.app, протокол app-server экспериментальный, примеров запросов в статье нет.</p>
+      <a class="src" href="https://hackernoon.com/how-i-made-codex-cli-resume-itself-after-hitting-a-usage-limit" target="_blank" rel="noopener">Читать ↗</a>
+    </div>
+    <div class="watch-item rv">
+      <h4><span class="em">🧠</span> Сводка после compaction — показания, а не запись</h4>
+      <div class="who"><a class="au" href="https://hackernoon.com/your-agents-memory-is-testimony-not-a-record" target="_blank" rel="noopener">✍ Spurthi Tallam</a><span class="src-tag">HackerNoon</span></div>
+      <p>После сжатия контекста агент может принять собственную сводку за указания пользователя. В пересказанных препринтах после одной компакции нарушения ограничений составили 30%. Готовой реализации нет, но мысль хранить ограничения вне сжатия стоит держать в голове.</p>
+      <a class="src" href="https://hackernoon.com/your-agents-memory-is-testimony-not-a-record" target="_blank" rel="noopener">Читать ↗</a>
+    </div>
+    <div class="watch-item rv">
+      <h4><span class="em">🛠</span> Конфигурация coding-агента как код</h4>
+      <div class="who"><a class="au" href="https://hackernoon.com/agents-are-not-the-answer-engineering-is" target="_blank" rel="noopener">✍ Renan Botasse</a><span class="src-tag">HackerNoon</span></div>
+      <p>Опыт на TypeScript-бэкенде примерно в 175 тысяч строк: правила, hooks и skills нужно проверять, как код. У автора hook молча пропускал всё, а правила с привязкой к путям не загружались. Файлов конфигурации в статье нет, эффект на качество не измерен.</p>
+      <a class="src" href="https://hackernoon.com/agents-are-not-the-answer-engineering-is" target="_blank" rel="noopener">Читать ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="plan" class="wrap">
+  <div class="shead rv"><span class="num">🎯</span><h2>Мой план на эту неделю</h2></div>
+  <p class="lead rv">Три действия из карточек выше, которые реально внедрить за неделю.</p>
+  <div class="checks"><div class="check rv"><div class="box"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div><div class="txt"><b>Сделать:</b> прогнать canary-тест со скриптом вместо модели для одного своего агента и урезать инструменты, которые пишут наружу свободным текстом</div><span class="when">до среды</span></div><div class="check rv"><div class="box"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div><div class="txt"><b>Сделать:</b> перевести переменные в командах удаления в форму <span class="k">"${VAR:?}"</span> и добавить это правило в AGENTS.md</div><span class="when">до четверга</span></div><div class="check rv"><div class="box"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div><div class="txt"><b>Сделать:</b> проверить потолок роутера на своём RAG: поиск по правильному домену против поиска по всему индексу</div><span class="when">до пятницы</span></div></div>
+</section>
+
+<section class="wrap">
+  <div class="shead rv"><span class="num">#</span><h2>Метаданные</h2></div>
+  <div class="meta rv">
+    <div><b>сгенерировано</b> 2026-11-22T08:58:41.589646Z</div>
+    <div><b>окно</b> 2026-11-15 — 2026-11-22 (7 дней)</div>
+    <div><b>отсканировано / в дайджест</b> 278 / 14</div>
+    <div><b>источник</b> поисковый индекс HackerNoon, неделя целиком; полный текст из страниц статей</div>
+    <div><b>покрытие окна</b> полное, отказов при сборе: 0</div>
+    <div><b>счётчик прочтений</b> есть у 249 из 278 статей (у статей моложе двух суток его ещё нет)</div>
+  </div>
+</section>
+
+<footer>
+  HackerNoon Weekly Digest <b>2026-11-22</b> · собрано из поискового индекса HackerNoon.<br>
+  Только практические AI/agent/LLM-статьи. <span style="opacity:.6">о чём → главное → попробуй</span>
+</footer>
+
+<div id="lb">
+  <span class="close">×</span>
+  <img id="lbimg" src="" alt="">
+  <div class="lbcap" id="lbcap"></div>
+  <a class="lbbtn" id="lbbtn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/></svg>Открыть статью</a>
+</div>
+<script>
+(function(){
+  var prog=document.getElementById('progress');
+  function onScroll(){var h=document.documentElement;prog.style.width=((h.scrollTop)/(h.scrollHeight-h.clientHeight)*100)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var navlinks=[].slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=navlinks.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;navlinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')===id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){if(s)spy.observe(s);});
+
+  // lightbox: data-full = картинка, data-href = статья
+  var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbcap=document.getElementById('lbcap'),lbbtn=document.getElementById('lbbtn');
+  document.querySelectorAll('.shot[data-full]').forEach(function(s){
+    s.addEventListener('click',function(){
+      lbimg.src=s.getAttribute('data-full');var fw=+s.getAttribute('data-fw')||0,fh=+s.getAttribute('data-fh')||0;lbimg.style.maxWidth=fw?'min(94vw,'+(fw/2)+'px)':'';lbimg.style.maxHeight=fh?'min(80vh,'+(fh/2)+'px)':'';
+      lbcap.textContent=s.getAttribute('data-cap')||'';
+      var href=s.getAttribute('data-href');
+      if(href){lbbtn.href=href;lbbtn.style.display='inline-flex';}else{lbbtn.style.display='none';}
+      lb.classList.add('on');
+    });
+  });
+  function close(){lb.classList.remove('on');lbimg.src='';}
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('close'))close();});
+  lbbtn.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+
+  document.querySelectorAll('.check').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('done');});});
+})();
+</script>
+</body>
+</html>
